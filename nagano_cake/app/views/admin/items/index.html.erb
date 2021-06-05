@@ -1,0 +1,19 @@
+<div class="container">
+ <div class="row">
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
+   <h1>商品一覧</h1>
+
+    <% @items.each do |item| %>
+    <tr>
+     <td><%= item.name %></td>
+     <td><%= item.image_id %></td>
+     <td><%= item.introduction %></td>
+     <td><%= item.price %></td>
+     <td><%= link_to '詳細画面', admin_item_path(item.id) %></td>
+    </tr>
+
+    <% end %>
+   </div>
+  </div>
+ </div>

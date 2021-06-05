@@ -1,0 +1,22 @@
+<div class="container">
+ <div class="row">
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
+   <h2>商品詳細編集画面</h2>
+
+   <%= form_with model:@item, url: admin_item_path(@item.id), local: true do |f| %>
+
+   <label for="inputName">商品名</label><br>
+   <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"商品名"%><br>
+   <label for="inputImage">商品画像</label><br>
+   <%= f.file_field :image, placeholder: "商品画像" %><br>
+   <label for="inputImage">商品説明分</label><br>
+   <%= f.text_area :introduction, autofocus: true, id:"inputName", placeholder:"商品説明分"%><br>
+   <label for="inputImage">税抜き価格</label><br>
+   <%= f.number_field :price, autofocus: true, id:"inputName", placeholder:"税抜き価格"%><br>
+
+   <%= f.submit "変更を保存", class: "btn btn-primary" %>
+   <% end %>
+  </div>
+ </div>
+</div>
